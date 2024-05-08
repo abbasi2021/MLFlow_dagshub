@@ -77,7 +77,7 @@ if __name__ == "__main__":
 
         
         # # For remote server only (Dagshub)
-        remote_server_uri = "https://dagshub.com/abbasi2021/MLOps.mlflow"
+        remote_server_uri = "https://dagshub.com/abbasi2021/MLFlow_dagshub.mlflow"
         mlflow.set_tracking_uri(remote_server_uri)
 
 
