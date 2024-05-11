@@ -12,7 +12,7 @@ from typing import Any
 #mlflow.set_tracking_uri(uri="http://127.0.0.1:8080")
 
 
-def create_experiment(  experiment_name: str, artifact_location: str, tags: dict[str, Any]):
+def create_experiment(  experiment_name: str,tags: dict[str, Any]):
     try:
         experiment_id = mlflow.create_experiment(
             name=experiment_name, tags=tags
@@ -23,7 +23,7 @@ def create_experiment(  experiment_name: str, artifact_location: str, tags: dict
     return experiment_id
 
 
-experiment_id=create_experiment(experiment_name="testing_mlflow1",artifact_location="testing_mlflow1_artifacts", tags={"env": "mlflowenv", "version": "1.0.0"})
+experiment_id=create_experiment(experiment_name="testing_mlflow1", tags={"env": "mlflowenv", "version": "1.0.0"})
 mlflow.set_experiment(experiment_id=experiment_id)
 
 if experiment_id is not None:
