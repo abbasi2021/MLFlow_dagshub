@@ -15,7 +15,7 @@ from typing import Any
 def create_experiment(  experiment_name: str, artifact_location: str, tags: dict[str, Any]):
     try:
         experiment_id = mlflow.create_experiment(
-            name=experiment_name, artifact_location=artifact_location, tags=tags
+            name=experiment_name, tags=tags
         )
     except:
         print(f"Experiment {experiment_name} already exists.")
