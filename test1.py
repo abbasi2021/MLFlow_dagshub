@@ -11,6 +11,7 @@ from typing import Any
 
 #mlflow.set_tracking_uri(uri="http://127.0.0.1:8080")
 
+
 def create_experiment(  experiment_name: str, artifact_location: str, tags: dict[str, Any]):
     try:
         experiment_id = mlflow.create_experiment(
@@ -68,7 +69,8 @@ with mlflow.start_run(run_name="logging_images", experiment_id=experiment.experi
     plt.legend()
 
     mlflow.log_figure(fig_cm, "metrics/confusion_matrix.png")
-
+    remote_server_uri = "https://dagshub.com/abbasi2021/MLOps.mlflow"
+    mlflow.set_tracking_uri(remote_server_uri)
     # print info about the run
     print("run_id: {}".format(run.info.run_id))
     print("experiment_id: {}".format(run.info.experiment_id))
